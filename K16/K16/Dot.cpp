@@ -1,5 +1,4 @@
 #include "Dot.h"
-#include <iostream>
 
 double Dot::getx()
 {

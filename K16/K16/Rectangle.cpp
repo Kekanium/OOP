@@ -1,17 +1,15 @@
 #include "Rectangle.h"
 #include "Dot.h"
 #include <math.h>
-#define ACCURANCY 0.000000000001
+#define EPS 1e-7
 Triangle::Triangle() {};
 
-Triangle::Triangle(Dot A, Dot B, Dot C) :point{ A,B,C }
-{
-}
+Triangle::Triangle(Dot A, Dot B, Dot C) :point{ A,B,C } {}
 
 double Triangle::calcRadius()
 {
 	double S = abs((point[0]._x - point[2]._x) * (point[1]._y - point[2]._y) - (point[1]._x - point[2]._x) * (point[0]._y - point[2]._y)) / 2;
-	if (S < ACCURANCY)
+	if (S < EPS)
 		return 0;
 	double R, a, b, c;
 

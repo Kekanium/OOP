@@ -1,4 +1,7 @@
 #pragma once
+#ifndef DOTH
+#define DOTH
+
 
 #include <iostream>
 using namespace std;
@@ -16,3 +19,4 @@ public:
 	Dot();
 };
 
+#endif 

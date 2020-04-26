@@ -1,4 +1,6 @@
 #pragma once
+#ifndef RECTANGLEH
+#define RECTANGLEH
 
 #include "Dot.h"
 class Triangle
@@ -11,5 +13,7 @@ public:
 	Triangle(Dot A, Dot B, Dot C);
 	double calcRadius();
 	double calcLine(int, int);
+
 };
 
+#endif 
