@@ -37,7 +37,6 @@ int main()
 		tail->insertBefore(temp);
 		count++;
 	}
-	std::cout << count;
 	temp = head->getNext();
 	for (int i = 0; i < count; i++)
 	{
@@ -53,13 +52,14 @@ int main()
 			temp = temp->getNext();
 	}
 	head->printList();
-	
-	if ((count - countOnes) == 0)
-		printf("1");
-	else if (countOnes == 0)
-		printf("0");
-	else
-		printf("0%*c1", (count - countOnes - 1), ' ');
-
+	if (count != 0)
+	{
+		if ((count - countOnes) == 0)
+			printf("1");
+		else if (countOnes == 0)
+			printf("0");
+		else
+			printf("0%*c1", (count - countOnes - 1), ' ');
+	}
 	return 0;
 }
