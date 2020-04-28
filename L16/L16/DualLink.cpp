@@ -1,6 +1,3 @@
-// DualLink.cpp
-// Dlink class cpp file
-
 #include "DualLink.h"
 
 DualLink::DualLink()
