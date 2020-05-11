@@ -139,7 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Dot.cpp" />
-    <ClCompile Include="K16.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Rectangle.cpp" />
   </ItemGroup>
   <ItemGroup>
