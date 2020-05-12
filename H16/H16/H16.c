@@ -1,7 +1,7 @@
 #pragma warning(disable:4996)
 
 #include <stdio.h>
-
+#include <string.h>
 char* colorYear(int year)
 {
 	switch (year)
@@ -13,7 +13,7 @@ char* colorYear(int year)
 	case 2:
 		return "yellow";
 	case 3:
-		return "white";
+		return "white"; 
 	case 4:
 		return "black";
 	}
@@ -51,7 +51,22 @@ char* animalYear(int year)
 int main()
 {
 	unsigned long long year;
-	scanf("%llu", &year);
-	printf("%llu is %s %s.\n", year, colorYear(((year - 4)%60)/12), animalYear((year - 4)%12));
+	char newYear[14];
+
+	do
+	{
+		if (scanf("%llu", &year) == 1)
+		{
+			strcpy(newYear, colorYear(((year - 4) % 60) / 12));
+			strcat(newYear, " ");
+			strcat(newYear, animalYear((year - 4) % 12));
+			printf("%s\n", newYear);
+		}
+		/*else
+		{
+			printf("Incorrect input");
+			break;
+		}*/
+	} while (getchar() != EOF);
 	return 0;
 }
