@@ -1,7 +1,6 @@
 #pragma once
 #ifndef FIGUREH
 #define FIGUREH
-//#include <string>
 #include <iostream>
 #include <string.h>
 class Figure
@@ -9,9 +8,9 @@ class Figure
 protected:
 	char _position[2];
 public:
-	Figure(const char*);
+	Figure(const char*);//Construcor with string-position
 	Figure();
-	virtual char isA() = 0;
+	virtual char isA() = 0;//will return what is figure
 	virtual int attack(char*) = 0;
 	static int deskout(char*);
 	void printBoard();

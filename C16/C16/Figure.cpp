@@ -22,20 +22,19 @@ void Figure::printBoard()
 {
 	char s[3];
 	s[2] = '\0';
-	const char* mark = ".+x";       // маркер позиции (безопасная / под атакой)
-	std::cout << "  A B C D E F G H\n";  // верхняя строка
-	for (int i = 8; i > 0; i--) {   // цикл по строкам
-		std::cout << i << ' ';             // номер строки доски слева
-		s[1] = '0' + i;               // текущая позиция по горизонтали
-		for (int j = 0; j < 8; j++) { // цикл по столбцам
-			s[0] = 'a' + j;             // текущая позиция по вертикали
-			// если позиция не совпадает с положением фигуры, то вывести маркер
+	const char* mark = ".+x";
+	std::cout << "  a b c d e f g h\n";
+	for (int i = 8; i > 0; i--) {
+		std::cout << i << ' ';
+		s[1] = '0' + i;
+		for (int j = 0; j < 8; j++) {
+			s[0] = 'a' + j;
 			char m = (*this != s) ? mark[attack(s)] : isA();
 			std::cout << m << ' ';
 		}
-		std::cout << i << "\n"; // номер строки доски справа
+		std::cout << i << "\n";
 	}
-	std::cout << "  A B C D E F G H\n"; // нижняя строка
+	std::cout << "  a b c d e f g h\n";
 }
 
 Figure& Figure::operator=(char* p)
@@ -64,14 +63,12 @@ std::ostream& operator<<(std::ostream& out, Figure& f)
 std::istream& operator>>(std::istream& in, Figure& f)
 {
 	char s[3];
-	//std::cin.unsetf(std::ios::skipws);
+	std::cin.unsetf(std::ios::skipws);
 	in >> s[0] >> s[1];
 	s[2] = '\0';
 	in.ignore(64, '\n');
 	if (Figure::deskout(s) || (f.attack(s) == 0) || f == s)
 		in.setstate(std::ios::failbit);
-	//if ( || (f == s)) // if(f.deskout(s))
-	//	in.clear(std::ios::failbit | in.rdstate());
 	f = s;
 	return in;
 }

@@ -20,5 +20,5 @@ int Camel::attack(char* p) {
 	if ((x + y) != 4 || x == y || x * y == 0) {
 		return 0;
 	}
-	return 2;
+	return 1;
 }

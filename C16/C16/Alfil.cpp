@@ -20,5 +20,5 @@ int Alfil::attack(char* p) {
     if ((x + y) != 4 || x != y) {
         return 0;
     }
-    return 1;
+    return 2;
 }

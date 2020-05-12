@@ -4,8 +4,7 @@
 #include <iostream>
 int main(int argc, char* argv[])
 {
-
-	// проверка числа аргументов и допустимости позиции
+	//Initialization start position
 	const char* pos = "a1";
 	if (argc < 2) {
 		std::cout << "Incorrect count arguments. Using default: " << pos << std::endl;
@@ -20,10 +19,12 @@ int main(int argc, char* argv[])
 		else
 			pos = argv[1];
 	}
+	//Init figure
 	Don f(pos);
-	int inputs = 0;
+	int inputs = 0;//for nice output
 	do
 	{
+		//from this for nice output
 		if (inputs != 0)
 		{
 			for (int i = 0; i < (inputs + 10); i++)
@@ -32,11 +33,11 @@ int main(int argc, char* argv[])
 			for (int i = 0; i < inputs; i++)
 				std::cout << "\n\r";
 		}
-		else
+		else//to this for nice output
 			f.printBoard();
 		std::cout << f << "-" << f.isA();
 		inputs++;
-	} while (std::cin >> f);
+	} while (std::cin >> f); //input new position
 
 	return 0;
 }
