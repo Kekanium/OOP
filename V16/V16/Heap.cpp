@@ -1,6 +1,6 @@
 #include "Heap.h"
 
-Heap::Heap(int s): size(s)
+Heap::Heap(int s) : size(s)
 {
 }
 

@@ -16,6 +16,6 @@ bool Pen::move()
 			return true;
 		}
 	heap->set(heap->get() - limit);
-	std::cout << limit<<std::endl;
+	std::cout << limit << std::endl;
 	return true;
 }

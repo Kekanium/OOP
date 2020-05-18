@@ -10,3 +10,7 @@ void Gambler::query()
 	std::cout << "Heap=" << heap->get() << ". " << name << " > ";
 	return;
 }
+
+Gambler::~Gambler()
+{
+}

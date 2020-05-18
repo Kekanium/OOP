@@ -1,6 +1,6 @@
 #include "Man.h"
 
-Man::Man(Heap& h, int l, const char*n):Gambler(h,l)
+Man::Man(Heap& h, int l, const char* n) :Gambler(h, l)
 {
 	name = n;
 }
